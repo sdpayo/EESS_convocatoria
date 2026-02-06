@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Espacios Sonoros 2026 - Convocatorias</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: #f5f5f5;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            color: #333;
+            margin-bottom: 50px;
+            padding: 40px 20px;
+            background: white;
+            border-radius: 2px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .header h1 {
+            font-size: 3em;
+            font-weight: 300;
+            margin-bottom: 10px;
+            color: #000;
+            letter-spacing: -1px;
+        }
+
+        .header .subtitle {
+            font-size: 1.2em;
+            font-weight: 300;
+            color: #666;
+        }
+
+        .forms-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .form-card {
+            background: white;
+            border-radius: 2px;
+            padding: 30px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+            border-left: 4px solid transparent;
+        }
+
+        .form-card:hover {
+            box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+            border-left-color: #000;
+        }
+
+        .form-card .icon {
+            font-size: 3em;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .form-card h2 {
+            font-size: 1.5em;
+            font-weight: 400;
+            margin-bottom: 10px;
+            color: #000;
+            text-align: center;
+        }
+
+        .form-card .language {
+            display: inline-block;
+            background: #333;
+            color: white;
+            padding: 5px 12px;
+            border-radius: 2px;
+            font-size: 0.8em;
+            font-weight: 500;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .form-card .description {
+            color: #666;
+            line-height: 1.6;
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        .form-card .category {
+            background: #f5f5f5;
+            padding: 8px 15px;
+            border-radius: 2px;
+            font-size: 0.85em;
+            color: #666;
+            text-align: center;
+            margin-top: 15px;
+            font-weight: 400;
+        }
+
+        .info-section {
+            background: white;
+            border-radius: 2px;
+            padding: 30px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            margin-top: 30px;
+        }
+
+        .info-section h3 {
+            color: #000;
+            margin-bottom: 15px;
+            font-size: 1.5em;
+            font-weight: 400;
+        }
+
+        .info-section p {
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 10px;
+        }
+
+        .info-section ul {
+            margin-left: 20px;
+            color: #666;
+            line-height: 1.8;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2em;
+            }
+            
+            .forms-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Espacios Sonoros 2026</h1>
+            <p class="subtitle">Convocatoria para Obras Electroacústicas Multicanal</p>
+        </div>
+
+        <div class="forms-grid">
+            <a href="menores-35.html" class="form-card">
+                <div class="icon">🎵</div>
+                <div style="text-align: center;">
+                    <span class="language">Español</span>
+                </div>
+                <h2>Menores de 35 años</h2>
+                <div class="category">Jóvenes Compositores Latinoamericanos</div>
+                <p class="description">Convocatoria dirigida a compositores latinoamericanos menores de 35 años.</p>
+            </a>
+
+            <a href="convocatoria-general.html" class="form-card">
+                <div class="icon">🎼</div>
+                <div style="text-align: center;">
+                    <span class="language">Español</span>
+                </div>
+                <h2>Convocatoria General</h2>
+                <div class="category">Internacional Sin Restricciones</div>
+                <p class="description">Convocatoria abierta internacional sin restricciones de edad o nacionalidad.</p>
+            </a>
+
+            <a href="open-call.html" class="form-card">
+                <div class="icon">🎹</div>
+                <div style="text-align: center;">
+                    <span class="language">English</span>
+                </div>
+                <h2>Open Call</h2>
+                <div class="category">International No Restrictions</div>
+                <p class="description">International open call without age or nationality restrictions.</p>
+            </a>
+
+            <a href="young-composers.html" class="form-card">
+                <div class="icon">🎸</div>
+                <div style="text-align: center;">
+                    <span class="language">English</span>
+                </div>
+                <h2>Young Composers</h2>
+                <div class="category">Young Latin American Composers</div>
+                <p class="description">Open call for young latin american composers under 35 years old.</p>
+            </a>
+        </div>
+
+        <div class="info-section">
+            <h3>Información General / General Information</h3>
+            <p><strong>Fecha límite de presentación / Submission deadline:</strong> 23 de junio de 2026 / June 23rd, 2026</p>
+            <p><strong>Anuncio de obras seleccionadas / Selected works announcement:</strong> Mediados de julio de 2026 / Mid-July 2026</p>
+            <p><strong>Festival:</strong> Septiembre 2026, Salta, Argentina</p>
+            
+            <h3 style="margin-top: 25px;">Requisitos / Requirements</h3>
+            <ul>
+                <li>Duración de las obras: entre 5 y 15 minutos / Work duration: between 5 and 15 minutes</li>
+                <li>Formato preferido: Ambisonics B-format / Preferred format: Ambisonics B-format</li>
+                <li>Una obra por compositor / One work per composer</li>
+                <li>Sin costo de inscripción / No registration fees</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
