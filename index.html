@@ -16,7 +16,40 @@
             font-family: 'Roboto', sans-serif;
             background: #f5f5f5;
             min-height: 100vh;
-            padding: 20px;
+            padding: 0;
+        }
+
+        .header-zocalo {
+            width: 100vw;
+            background: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+            min-height: 110px;
+            margin-bottom: 30px;
+            padding: 0 2cm;
+            box-sizing: border-box;
+        }
+
+        .header-title {
+            color: #222;
+            font-size: 1.35em;
+            font-weight: 300;
+            letter-spacing: -0.7px;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .header-logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .header-logo img {
+            height: 140px;
+            max-width: 320px;
+            object-fit: contain;
+            filter: grayscale(1) brightness(1.2);
         }
 
         .container {
@@ -51,9 +84,17 @@
 
         .forms-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(2, 1fr);
             gap: 30px;
             margin-bottom: 40px;
+        }
+
+        @media (max-width: 900px) {
+            .forms-grid {
+                grid-template-columns: 1fr;
+                grid-template-rows: none;
+            }
         }
 
         .form-card {
@@ -158,15 +199,35 @@
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="header">
-            <h1>Espacios Sonoros 2026</h1>
-            <p class="subtitle">Convocatoria para Obras Electroacústicas Multicanal</p>
+
+    <div class="header-zocalo">
+        <div class="header-title">
+            Convocatoria para Obras Electroacústicas Multicanal
+        </div>
+        <div class="header-logo">
+            <img src="eess.png" alt="Logo EESS">
+        </div>
+    </div>
+    <div class="main-content">
+        <div class="info-section" style="margin-top:0; margin-bottom: 30px;">
+            <h3>Información General / General Information</h3>
+            <p><strong>Fecha límite de presentación / Submission deadline:</strong> 23 de junio de 2026 / June 23rd, 2026</p>
+            <p><strong>Anuncio de obras seleccionadas / Selected works announcement:</strong> Mediados de julio de 2026 / Mid-July 2026</p>
+            <p><strong>Festival:</strong> Septiembre 2026, Salta, Argentina</p>
+            <h3 style="margin-top: 25px;">Requisitos / Requirements</h3>
+            <ul>
+                <li>Duración de las obras: entre 5 y 15 minutos / Work duration: between 5 and 15 minutes</li>
+                <li>Formato preferido: Ambisonics B-format / Preferred format: Ambisonics B-format</li>
+                <li>Una obra por compositor / One work per composer</li>
+                <li>Sin costo de inscripción / No registration fees</li>
+            </ul>
         </div>
 
         <div class="forms-grid">
             <a href="menores-35.html" class="form-card">
-                <div class="icon">🎵</div>
+                <div class="icon" style="margin-bottom: 10px;">
+                    <img src="logoEESS.png" alt="Logo sección" style="height: 60px; max-width: 100px; object-fit: contain; display: block; margin: 0 auto; filter: grayscale(1) brightness(1.1);">
+                </div>
                 <div style="text-align: center;">
                     <span class="language">Español</span>
                 </div>
@@ -176,7 +237,9 @@
             </a>
 
             <a href="convocatoria-general.html" class="form-card">
-                <div class="icon">🎼</div>
+                <div class="icon" style="margin-bottom: 10px;">
+                    <img src="logoEESS.png" alt="Logo sección" style="height: 60px; max-width: 100px; object-fit: contain; display: block; margin: 0 auto; filter: grayscale(1) brightness(1.1);">
+                </div>
                 <div style="text-align: center;">
                     <span class="language">Español</span>
                 </div>
@@ -186,7 +249,9 @@
             </a>
 
             <a href="open-call.html" class="form-card">
-                <div class="icon">🎹</div>
+                <div class="icon" style="margin-bottom: 10px;">
+                    <img src="logoEESS.png" alt="Logo sección" style="height: 60px; max-width: 100px; object-fit: contain; display: block; margin: 0 auto; filter: grayscale(1) brightness(1.1);">
+                </div>
                 <div style="text-align: center;">
                     <span class="language">English</span>
                 </div>
@@ -196,7 +261,9 @@
             </a>
 
             <a href="young-composers.html" class="form-card">
-                <div class="icon">🎸</div>
+                <div class="icon" style="margin-bottom: 10px;">
+                    <img src="logoEESS.png" alt="Logo sección" style="height: 60px; max-width: 100px; object-fit: contain; display: block; margin: 0 auto; filter: grayscale(1) brightness(1.1);">
+                </div>
                 <div style="text-align: center;">
                     <span class="language">English</span>
                 </div>
@@ -206,20 +273,7 @@
             </a>
         </div>
 
-        <div class="info-section">
-            <h3>Información General / General Information</h3>
-            <p><strong>Fecha límite de presentación / Submission deadline:</strong> 23 de junio de 2026 / June 23rd, 2026</p>
-            <p><strong>Anuncio de obras seleccionadas / Selected works announcement:</strong> Mediados de julio de 2026 / Mid-July 2026</p>
-            <p><strong>Festival:</strong> Septiembre 2026, Salta, Argentina</p>
-            
-            <h3 style="margin-top: 25px;">Requisitos / Requirements</h3>
-            <ul>
-                <li>Duración de las obras: entre 5 y 15 minutos / Work duration: between 5 and 15 minutes</li>
-                <li>Formato preferido: Ambisonics B-format / Preferred format: Ambisonics B-format</li>
-                <li>Una obra por compositor / One work per composer</li>
-                <li>Sin costo de inscripción / No registration fees</li>
-            </ul>
-        </div>
+        <!-- info-section movida arriba -->
     </div>
 </body>
 </html>

@@ -16,16 +16,18 @@
             font-family: 'Roboto', sans-serif;
             background: #f5f5f5;
             min-height: 100vh;
-            padding: 40px 20px;
+            padding: 0;
         }
 
         .container {
-            max-width: 800px;
-            margin: 0 auto;
+            max-width: none;
+            width: 100vw;
+            margin: 0;
             background: white;
-            border-radius: 2px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-            padding: 40px;
+            border-radius: 0;
+            box-shadow: none;
+            padding: 40px 2cm 40px 2cm;
+            text-align: left;
         }
 
         .back-link {
@@ -43,23 +45,32 @@
         h1 {
             color: #000;
             margin-bottom: 10px;
-            font-size: 2.5em;
-            font-weight: 300;
+            font-size: 2.3em;
+            font-weight: 400;
             letter-spacing: -1px;
+            display: block;
+            background: none;
+            box-shadow: none;
+            padding: 0;
+            border-radius: 0;
         }
 
-        .subtitle {
-            color: #666;
-            margin-bottom: 30px;
-            font-size: 1.1em;
+        .subtitle.destacado {
+            background: #ffe600;
+            box-shadow: 0 2px 0 #ffe600, 0 -2px 0 #ffe600;
+            display: inline-block;
+            padding: 0 10px 2px 10px;
+            border-radius: 4px;
+            color: #222;
+            font-weight: 500;
         }
 
         .info-box {
             background: #fafafa;
-            border-left: 4px solid #000;
-            padding: 20px;
+            border-left: 4px solid #ffe600;
+            padding: 20px 24px;
             margin-bottom: 30px;
-            border-radius: 2px;
+            border-radius: 8px;
         }
 
         .info-box p {
@@ -73,10 +84,10 @@
         }
 
         .donation-box {
-            background: #fff3cd;
-            border: 1px solid #ffc107;
-            padding: 15px;
-            border-radius: 5px;
+            background: #fffbe6;
+            border: 1px solid #ffe600;
+            padding: 15px 20px;
+            border-radius: 8px;
             margin-bottom: 30px;
         }
 
@@ -94,9 +105,12 @@
             color: #000;
             margin-top: 30px;
             margin-bottom: 20px;
-            border-bottom: 1px solid #e0e0e0;
-            padding-bottom: 10px;
             font-weight: 400;
+            display: inline-block;
+            background: #ffe600;
+            box-shadow: 0 2px 0 #ffe600, 0 -2px 0 #ffe600;
+            padding: 0 10px 2px 10px;
+            border-radius: 4px;
         }
 
         .form-group {
@@ -106,7 +120,7 @@
         label {
             display: block;
             margin-bottom: 8px;
-            color: #333;
+            color: #222;
             font-weight: 500;
         }
 
@@ -123,10 +137,11 @@
             width: 100%;
             padding: 12px;
             border: 1px solid #ddd;
-            border-radius: 5px;
+            border-radius: 4px;
             font-size: 1em;
             font-family: inherit;
             transition: border-color 0.3s;
+            background: #fcfcfc;
         }
 
         input:focus,
@@ -156,7 +171,7 @@
         button {
             padding: 12px 30px;
             border: none;
-            border-radius: 5px;
+            border-radius: 4px;
             font-size: 1em;
             cursor: pointer;
             transition: background-color 0.3s;
@@ -186,17 +201,17 @@
 
         @media (max-width: 768px) {
             .container {
-                padding: 20px;
+                padding: 12px 0.5cm 12px 0.5cm;
             }
-
             h1 {
-                font-size: 2em;
+                font-size: 1.5em;
             }
-
+            h2 {
+                font-size: 1.1em;
+            }
             .button-group {
                 flex-direction: column;
             }
-
             button {
                 width: 100%;
             }
@@ -204,11 +219,20 @@
     </style>
 </head>
 <body>
+    <!-- Zócalo superior blanco con logo grande a la derecha y título a la izquierda -->
+    <div style="width: 100%; background: #fff; padding: 0; display: flex; align-items: center; justify-content: space-between; box-shadow: 0 2px 8px rgba(0,0,0,0.07); min-height: 110px; margin-bottom: 30px;">
+        <div style="padding-left: 40px; color: #222; font-size: 1.35em; font-weight: 300; letter-spacing: -0.7px; font-family: 'Roboto', sans-serif;">
+            Convocatoria para Obras Electroacústicas Multicanal
+        </div>
+        <div style="padding-right: 40px; display: flex; align-items: center;">
+            <img src="eess.png" alt="Logo EESS" style="height: 120px; max-width: 240px; object-fit: contain; filter: grayscale(1) brightness(1.2);">
+        </div>
+    </div>
     <div class="container">
         <a href="index.html" class="back-link">← Volver a la selección de formularios</a>
-        
+        <!-- Logo sección eliminado -->
         <h1>Menores de 35 años - Espacios Sonoros 2026</h1>
-        <p class="subtitle">Convocatoria para jóvenes compositores latinoamericanos</p>
+        <p class="subtitle destacado">Convocatoria para jóvenes compositores latinoamericanos</p>
 
         <div class="info-box">
             <p>Espacios Sonoros tiene el agrado de anunciar una nueva convocatoria abierta para la presentación de obras electroacústicas multicanal. Espacios Sonoros 2026 se realizará en la ciudad de Salta en septiembre.</p>
@@ -220,85 +244,269 @@
             <p><strong>El presente formulario corresponde a la convocatoria abierta para menores de 35 años.</strong></p>
         </div>
 
-        <div class="donation-box">
-            <p>Espacios Sonoros es gratuito tanto para los compositores como para el público. Por favor considerá realizar una donación para ayudar al proyecto, a través de <a href="https://www.paypal.com/donate/?hosted_button_id=XKTFJ7W7Z63NC" target="_blank">PayPal</a> o <a href="http://link.mercadopago.com.ar/espaciossonoros" target="_blank">Mercado Pago</a>.</p>
-        </div>
-
         <form id="submissionForm">
-            <h2>Información de Contacto</h2>
+            <div id="seccion1">
+                <h2>Información de Contacto</h2>
 
-            <div class="form-group">
-                <label for="email">Correo electrónico <span class="required">*</span></label>
-                <input type="email" id="email" name="email" required>
+                <div class="form-group">
+                    <label for="email">Correo electrónico <span class="required">*</span></label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="facebook">Facebook</label>
+                    <input type="text" id="facebook" name="facebook" placeholder="@tu_usuario o usuario">
+                </div>
+
+                <div class="form-group">
+                    <label for="instagram">Instagram</label>
+                    <input type="text" id="instagram" name="instagram" placeholder="@tu_usuario">
+                </div>
+
+                <div class="form-group">
+                    <label for="webpage">Página Web</label>
+                    <input type="text" id="webpage" name="webpage" placeholder="https://tu-sitio-web.com">
+                </div>
+
+                <h2>Datos Personales</h2>
+
+                <div class="form-group">
+                    <label for="nombre">Nombre <span class="required">*</span></label>
+                    <input type="text" id="nombre" name="nombre" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="apellido">Apellido <span class="required">*</span></label>
+                    <input type="text" id="apellido" name="apellido" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="seudonimo">Seudónimo <span class="required">*</span></label>
+                    <input type="text" id="seudonimo" name="seudonimo" required>
+                    <div class="form-hint">Nombre artístico o nombre con el que deseas que aparezca tu obra</div>
+                </div>
+
+                <div class="form-group">
+                    <label for="nacionalidad">Nacionalidad <span class="required">*</span></label>
+                    <select id="nacionalidad" name="nacionalidad" required onchange="mostrarOtraNacionalidad()">
+                        <option value="">Selecciona tu nacionalidad</option>
+                        <option value="Argentina">Argentina</option>
+                        <option value="Bolivia">Bolivia</option>
+                        <option value="Brasil">Brasil</option>
+                        <option value="Chile">Chile</option>
+                        <option value="Colombia">Colombia</option>
+                        <option value="Costa Rica">Costa Rica</option>
+                        <option value="Cuba">Cuba</option>
+                        <option value="Ecuador">Ecuador</option>
+                        <option value="El Salvador">El Salvador</option>
+                        <option value="Guatemala">Guatemala</option>
+                        <option value="Honduras">Honduras</option>
+                        <option value="México">México</option>
+                        <option value="Nicaragua">Nicaragua</option>
+                        <option value="Panamá">Panamá</option>
+                        <option value="Paraguay">Paraguay</option>
+                        <option value="Perú">Perú</option>
+                        <option value="Puerto Rico">Puerto Rico</option>
+                        <option value="República Dominicana">República Dominicana</option>
+                        <option value="Uruguay">Uruguay</option>
+                        <option value="Venezuela">Venezuela</option>
+                        <option value="Otro">Otro</option>
+                    </select>
+                    <input type="text" id="otra_nacionalidad" name="otra_nacionalidad" placeholder="Especifica tu nacionalidad" style="display:none; margin-top:8px;" />
+                </div>
+
+                <div class="form-group">
+                    <label for="residencia">Lugar de Residencia <span class="required">*</span></label>
+                    <select id="residencia" name="residencia" required onchange="mostrarOtroPais()">
+                        <option value="">Selecciona tu país de residencia</option>
+                        <option value="Argentina">Argentina</option>
+                        <option value="Bolivia">Bolivia</option>
+                        <option value="Brasil">Brasil</option>
+                        <option value="Chile">Chile</option>
+                        <option value="Colombia">Colombia</option>
+                        <option value="Costa Rica">Costa Rica</option>
+                        <option value="Cuba">Cuba</option>
+                        <option value="Ecuador">Ecuador</option>
+                        <option value="El Salvador">El Salvador</option>
+                        <option value="Guatemala">Guatemala</option>
+                        <option value="Honduras">Honduras</option>
+                        <option value="México">México</option>
+                        <option value="Nicaragua">Nicaragua</option>
+                        <option value="Panamá">Panamá</option>
+                        <option value="Paraguay">Paraguay</option>
+                        <option value="Perú">Perú</option>
+                        <option value="Puerto Rico">Puerto Rico</option>
+                        <option value="República Dominicana">República Dominicana</option>
+                        <option value="Uruguay">Uruguay</option>
+                        <option value="Venezuela">Venezuela</option>
+                        <option value="Otro">Otro</option>
+                    </select>
+                    <input type="text" id="otro_pais" name="otro_pais" placeholder="Especifica tu país" style="display:none; margin-top:8px;" />
+                    <div class="form-hint">País</div>
+                </div>
+
+                <div class="form-group">
+                    <label for="fecha_nacimiento">Fecha de Nacimiento <span class="required">*</span></label>
+                    <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" required>
+                    <div class="form-hint">Debes tener 35 años o menos para esta convocatoria</div>
+                </div>
+
+                <div class="form-group">
+                    <label for="biografia">Breve biografía <span class="required">*</span></label>
+                    <textarea id="biografia" name="biografia" required></textarea>
+                    <div class="form-hint">Incluye tu formación, experiencia y línea de trabajo artístico</div>
+                </div>
+
+                <div class="button-group">
+                    <button type="button" class="btn-primary" onclick="mostrarSeccion(2)">Siguiente</button>
+                    <button type="reset" class="btn-secondary">Borrar formulario</button>
+                </div>
             </div>
+            <div id="seccion2" style="display:none;">
+                <h2>Detalle de la obra</h2>
 
-            <div class="form-group">
-                <label for="facebook">Facebook</label>
-                <input type="url" id="facebook" name="facebook" placeholder="https://facebook.com/tu-perfil">
+                <div class="form-group">
+                    <label for="descripcion_obra">Descripción (opcional)</label>
+                    <textarea id="descripcion_obra" name="descripcion_obra"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="titulo">Título de la obra <span class="required">*</span></label>
+                    <input type="text" id="titulo" name="titulo" required>
+                </div>
+                <div class="form-group">
+                    <label for="duracion">Duración <span class="required">*</span></label>
+                    <input type="text" id="duracion" name="duracion" placeholder="Ej: 10:30" required>
+                </div>
+                <div class="form-group">
+                    <label for="anio">Año de composición <span class="required">*</span></label>
+                    <input type="text" id="anio" name="anio" required>
+                </div>
+                <div class="form-group">
+                    <label for="formato">Formato <span class="required">*</span></label>
+                    <select id="formato" name="formato" required onchange="mostrarOtroFormato()">
+                        <option value="">Selecciona el formato</option>
+                        <option value="Ambisonics">Ambisonics</option>
+                        <option value="VBAP">VBAP</option>
+                        <option value="Estéreo">Estéreo</option>
+                        <option value="Otro">Otro</option>
+                    </select>
+                    <input type="text" id="otro_formato" name="otro_formato" placeholder="Especifica el formato" style="display:none; margin-top:8px;" />
+                </div>
+                <div class="form-group">
+                    <label for="estreno">Estreno <span class="required">*</span></label>
+                    <select id="estreno" name="estreno" required>
+                        <option value="">Selecciona una opción</option>
+                        <option value="Estreno mundial">Estreno mundial</option>
+                        <option value="Estreno latinoamericano">Estreno latinoamericano</option>
+                        <option value="Estreno argentino">Estreno argentino</option>
+                        <option value="La obra ya fue estrenada">La obra ya fue estrenada</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="link_obra">Link a la obra <span class="required">*</span></label>
+                    <input type="text" id="link_obra" name="link_obra" required>
+                    <div class="form-hint">No enviar links temporales (wetransfer, etc). Para obras multicanal, enviar versión estéreo. El nombre debe ser Seudónimo - Título. Solo mp3 para la postulación. Si la obra es seleccionada, se solicitará audio de alta resolución.</div>
+                </div>
+                <div class="form-group">
+                    <label for="como_conocio">¿Cómo te enteraste de Espacios Sonoros? <span class="required">*</span></label>
+                    <select id="como_conocio" name="como_conocio" required onchange="mostrarOtraFuente()">
+                        <option value="">Selecciona una opción</option>
+                        <option value="Sitio web">Sitio web</option>
+                        <option value="Redes sociales">Redes sociales</option>
+                        <option value="Ediciones anteriores">Ediciones anteriores</option>
+                        <option value="Universidad">Universidad</option>
+                        <option value="Amigo o colega">Amigo o colega</option>
+                        <option value="Sitios de convocatorias">Sitios de convocatorias</option>
+                        <option value="Otro">Otro</option>
+                    </select>
+                    <input type="text" id="otra_fuente" name="otra_fuente" placeholder="¿Cuál?" style="display:none; margin-top:8px;" />
+                </div>
+
+                <div class="button-group">
+                    <button type="button" class="btn-secondary" onclick="mostrarSeccion(1)">Anterior</button>
+                    <button type="button" class="btn-primary" onclick="mostrarSeccion(3)">Siguiente</button>
+                </div>
             </div>
+            <div id="seccion3" style="display:none;">
+                <h2>Términos legales</h2>
+                <div class="donation-box">
+                    <p>Espacios Sonoros es gratuito tanto para los compositores como para el público. Por favor considerá realizar una donación para ayudar al proyecto, a través de <a href="https://www.paypal.com/donate/?hosted_button_id=XKTFJ7W7Z63NC" target="_blank">PayPal</a> o <a href="http://link.mercadopago.com.ar/espaciossonoros" target="_blank">Mercado Pago</a>.</p>
+                </div>
 
-            <div class="form-group">
-                <label for="instagram">Instagram</label>
-                <input type="text" id="instagram" name="instagram" placeholder="@tu_usuario">
-            </div>
-
-            <div class="form-group">
-                <label for="webpage">Página Web</label>
-                <input type="url" id="webpage" name="webpage" placeholder="https://tu-sitio-web.com">
-            </div>
-
-            <h2>Datos Personales</h2>
-
-            <div class="form-group">
-                <label for="nombre">Nombre <span class="required">*</span></label>
-                <input type="text" id="nombre" name="nombre" required>
-            </div>
-
-            <div class="form-group">
-                <label for="apellido">Apellido <span class="required">*</span></label>
-                <input type="text" id="apellido" name="apellido" required>
-            </div>
-
-            <div class="form-group">
-                <label for="seudonimo">Seudónimo <span class="required">*</span></label>
-                <input type="text" id="seudonimo" name="seudonimo" required>
-                <div class="form-hint">Nombre artístico o nombre con el que deseas que aparezca tu obra</div>
-            </div>
-
-            <div class="form-group">
-                <label for="nacionalidad">Nacionalidad <span class="required">*</span></label>
-                <input type="text" id="nacionalidad" name="nacionalidad" required>
-            </div>
-
-            <div class="form-group">
-                <label for="residencia">Lugar de Residencia <span class="required">*</span></label>
-                <input type="text" id="residencia" name="residencia" required>
-                <div class="form-hint">Ciudad, País</div>
-            </div>
-
-            <div class="form-group">
-                <label for="fecha_nacimiento">Fecha de Nacimiento <span class="required">*</span></label>
-                <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" required>
-                <div class="form-hint">Debes tener 35 años o menos para esta convocatoria</div>
-            </div>
-
-            <div class="form-group">
-                <label for="biografia">Breve biografía <span class="required">*</span></label>
-                <textarea id="biografia" name="biografia" required></textarea>
-                <div class="form-hint">Incluye tu formación, experiencia y línea de trabajo artístico</div>
-            </div>
-
-            <div class="button-group">
-                <button type="submit" class="btn-primary">Siguiente</button>
-                <button type="reset" class="btn-secondary">Borrar formulario</button>
+                <div class="form-group">
+                    <label for="descripcion_terminos">Descripción (opcional)</label>
+                    <textarea id="descripcion_terminos" name="descripcion_terminos"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="acepto">
+                        <input type="checkbox" id="acepto" name="acepto" required>
+                        Acepto que, si mi obra es seleccionada, Espacios Sonoros podrá usar la obra o fragmentos de la misma para fines de difusión o transmisiones online por un período de un año después del festival. Espacios Sonoros es una organización sin fines de lucro y no obtendrá remuneración económica de ningún tipo por el acceso a estos materiales, ni los pondrá a disposición para descarga.
+                    </label>
+                </div>
+                <div class="button-group">
+                    <button type="button" class="btn-secondary" onclick="mostrarSeccion(2)">Anterior</button>
+                    <button type="submit" class="btn-primary">Enviar</button>
+                </div>
             </div>
         </form>
     </div>
 
     <script>
+        function mostrarOtraNacionalidad() {
+            var select = document.getElementById('nacionalidad');
+            var otra = document.getElementById('otra_nacionalidad');
+            if(select.value === 'Otro') {
+                otra.style.display = 'block';
+                otra.required = true;
+            } else {
+                otra.style.display = 'none';
+                otra.required = false;
+                otra.value = '';
+            }
+        }
+        function mostrarOtroPais() {
+            var select = document.getElementById('residencia');
+            var otro = document.getElementById('otro_pais');
+            if(select.value === 'Otro') {
+                otro.style.display = 'block';
+                otro.required = true;
+            } else {
+                otro.style.display = 'none';
+                otro.required = false;
+                otro.value = '';
+            }
+        }
+        function mostrarOtroFormato() {
+            var select = document.getElementById('formato');
+            var otro = document.getElementById('otro_formato');
+            if(select.value === 'Otro') {
+                otro.style.display = 'block';
+                otro.required = true;
+            } else {
+                otro.style.display = 'none';
+                otro.required = false;
+                otro.value = '';
+            }
+        }
+        function mostrarOtraFuente() {
+            var select = document.getElementById('como_conocio');
+            var otra = document.getElementById('otra_fuente');
+            if(select.value === 'Otro') {
+                otra.style.display = 'block';
+                otra.required = true;
+            } else {
+                otra.style.display = 'none';
+                otra.required = false;
+                otra.value = '';
+            }
+        }
+        function mostrarSeccion(n) {
+            document.getElementById('seccion1').style.display = n === 1 ? 'block' : 'none';
+            document.getElementById('seccion2').style.display = n === 2 ? 'block' : 'none';
+            document.getElementById('seccion3').style.display = n === 3 ? 'block' : 'none';
+        }
         document.getElementById('submissionForm').addEventListener('submit', function(e) {
             e.preventDefault();
-            
             // Validar edad
             const fechaNacimiento = new Date(document.getElementById('fecha_nacimiento').value);
             const hoy = new Date();
@@ -307,13 +515,37 @@
             if (mes < 0 || (mes === 0 && hoy.getDate() < fechaNacimiento.getDate())) {
                 edad--;
             }
-            
             if (edad > 35) {
                 alert('Esta convocatoria es para compositores menores de 35 años. Por favor, utiliza el formulario de Convocatoria General.');
                 return;
             }
-            
-            alert('Formulario enviado con éxito! (En producción, esto enviaría los datos al servidor)');
+            // Reunir datos del formulario
+            const form = e.target;
+            const data = {};
+            Array.from(form.elements).forEach(el => {
+                if (el.name && ((el.type !== 'checkbox' && el.type !== 'radio') || el.checked)) {
+                    data[el.name] = el.value;
+                }
+            });
+            // Encriptar datos (AES simple con clave fija, para ejemplo)
+            const key = 'espaciossonoros2026';
+            function encrypt(text, key) {
+                // Simple XOR (no seguro, solo ejemplo didáctico)
+                let enc = '';
+                for (let i = 0; i < text.length; i++) {
+                    enc += String.fromCharCode(text.charCodeAt(i) ^ key.charCodeAt(i % key.length));
+                }
+                return btoa(enc);
+            }
+            const csvLine = Object.values(data).map(v => '"'+(v||'')+'"').join(',');
+            const encrypted = encrypt(csvLine, key);
+            // Guardar en archivo CSV (simulado: descarga local)
+            const blob = new Blob([encrypted + '\n'], {type: 'text/plain'});
+            const a = document.createElement('a');
+            a.href = URL.createObjectURL(blob);
+            a.download = 'respuestas_encriptadas.csv';
+            a.click();
+            alert('¡Formulario enviado! El archivo encriptado se descargó. Sube este archivo al repositorio para almacenarlo.');
         });
     </script>
 </body>
