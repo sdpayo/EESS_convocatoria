@@ -527,6 +527,8 @@
                     data[el.name] = el.value;
                 }
             });
+            // Agregar columna de tipo de convocatoria
+            data['call_type'] = 'sub35-es';
             // Encriptar datos (AES simple con clave fija, para ejemplo)
             const key = 'espaciossonoros2026';
             function encrypt(text, key) {
