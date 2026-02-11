@@ -217,6 +217,9 @@
             }
         }
     </style>
+    <script 
+        src="https://www.paypal.com/sdk/js?client-id=BAAxaNt3WAxYk1dbk1rLcXJ04BlE093cTeR4TRE_z6KByi7PxW1zUKEaRMS8M-DHPzIn-8vA9q8p8OaqcY&components=hosted-buttons&disable-funding=venmo&currency=USD">
+    </script>
 </head>
 <body>
     <!-- Zócalo superior blanco con logo grande a la derecha y título a la izquierda -->
@@ -780,7 +783,14 @@
             <div id="seccion3" style="display:none;">
                 <h2>Legal Terms</h2>
                 <div class="donation-box">
-                    <p>Espacios Sonoros is free for both composers and the public. Please consider making a donation to support the project via <a href="https://www.paypal.com/donate/?hosted_button_id=XKTFJ7W7Z63NC" target="_blank">PayPal</a> or <a href="http://link.mercadopago.com.ar/espaciossonoros" target="_blank">Mercado Pago</a>.</p>
+                    <p>Espacios Sonoros is free for both composers and the public. Please consider making a donation to support the project. </p>
+                    <div id="paypal-container-KPB2GPQ8FU42E"></div>
+                    <script>
+                        paypal.HostedButtons({
+                            hostedButtonId: "KPB2GPQ8FU42E",
+                        }).render("#paypal-container-KPB2GPQ8FU42E")
+                    </script>
+                    <a href="http://link.mercadopago.com.ar/espaciossonoros">Donate through Mercado Pago.</a>
                 </div>
 
                 <div class="form-group">

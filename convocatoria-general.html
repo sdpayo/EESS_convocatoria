@@ -217,6 +217,9 @@
             }
         }
     </style>
+    <script 
+        src="https://www.paypal.com/sdk/js?client-id=BAAxaNt3WAxYk1dbk1rLcXJ04BlE093cTeR4TRE_z6KByi7PxW1zUKEaRMS8M-DHPzIn-8vA9q8p8OaqcY&components=hosted-buttons&disable-funding=venmo&currency=USD">
+    </script>
 </head>
 <body>
     <!-- Zócalo superior blanco con logo grande a la derecha y título a la izquierda -->
@@ -429,13 +432,17 @@
             </div>
             <div id="seccion3" style="display:none;">
                 <h2>Términos legales</h2>
-                <div class="donation-box">
-                    <p>Espacios Sonoros es gratuito tanto para los compositores como para el público. Por favor considerá realizar una donación para ayudar al proyecto, a través de <a href="https://www.paypal.com/donate/?hosted_button_id=XKTFJ7W7Z63NC" target="_blank">PayPal</a> o <a href="http://link.mercadopago.com.ar/espaciossonoros" target="_blank">Mercado Pago</a>.</p>
-                </div>
-
-                <div class="form-group">
-                    <label for="descripcion_terminos">Descripción (opcional)</label>
-                    <textarea id="descripcion_terminos" name="descripcion_terminos"></textarea>
+                <div alig>
+                    <div class="donation-box">
+                        <p>Espacios Sonoros es gratuito tanto para los compositores como para el público. Por favor considerá realizar una donación para ayudar al proyecto.</p>
+                        <div id="paypal-container-KPB2GPQ8FU42E"></div>
+                            <script>
+                            paypal.HostedButtons({
+                                hostedButtonId: "KPB2GPQ8FU42E",
+                            }).render("#paypal-container-KPB2GPQ8FU42E")
+                            </script>
+                            <a href="http://link.mercadopago.com.ar/espaciossonoros">Donar a través de Mercado Pago.</a>
+                    </div>
                 </div>
                 <div class="form-group">
                     <label for="acepto">
