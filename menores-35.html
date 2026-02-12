@@ -542,20 +542,50 @@
             // Agregar columna de tipo de convocatoria
             data['call_type'] = 'sub35-es';
             // Enviar datos a Google Sheets vía webhook
-            fetch('https://script.google.com/macros/s/AKfycbwFX6Ok2-eKyUHBAocuasJTVaoUwxuzL5kEyWnr-kRH3yCT9zXeT9XwZzQXb6FaSfYvCg/exec', {
+            fetch('https://script.google.com/macros/s/AKfycbwCfLgYAeWZRVlW7MV1O-3gPh4ItBdAu6nZB_2YFthXR5QFcTgvWmQgcH1nyWgNLvn-5g/exec', {
                 method: 'POST',
-                body: JSON.stringify(data),
-                headers: { 'Content-Type': 'application/json' }
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: new URLSearchParams(data).toString()
             })
+            .then(res => res.json())
             .then(res => {
-                if(res.ok) {
+                if (res.ok) {
                     alert('¡Formulario enviado correctamente!');
                     form.reset();
                 } else {
-                    alert('Error al enviar el formulario.');
+                    alert('Error: ' + (res.error || 'al enviar el formulario.'));
                 }
             })
             .catch(() => alert('Error de conexión al enviar el formulario.'));
+                function mostrarOtraNacionalidad() {
+                    var select = document.getElementById('nacionalidad');
+                    var otra = document.getElementById('otra_nacionalidad');
+                    if(select.value === 'Otro') {
+                        otra.style.display = 'block';
+                        otra.required = true;
+                    } else {
+                        otra.style.display = 'none';
+                        otra.required = false;
+                        otra.value = '';
+                    }
+                }
+                function mostrarOtroPais() {
+                    var select = document.getElementById('pais');
+                    var otro = document.getElementById('otro_pais');
+                    if(select.value === 'Otro') {
+                        otro.style.display = 'block';
+                        otro.required = true;
+                    } else {
+                        otro.style.display = 'none';
+                        otro.required = false;
+                        otro.value = '';
+                    }
+                }
+                function mostrarSeccion(n) {
+                    document.getElementById('seccion1').style.display = n === 1 ? 'block' : 'none';
+                    document.getElementById('seccion2').style.display = n === 2 ? 'block' : 'none';
+                    document.getElementById('seccion3').style.display = n === 3 ? 'block' : 'none';
+                }
         });
     </script>
 </body>

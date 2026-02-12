@@ -878,17 +878,19 @@
             // Add call type column
             data['call_type'] = 'General-en';
             // Send data to Google Sheets via webhook
-            fetch('https://script.google.com/macros/s/AKfycbwFX6Ok2-eKyUHBAocuasJTVaoUwxuzL5kEyWnr-kRH3yCT9zXeT9XwZzQXb6FaSfYvCg/exec', {
+            fetch('https://script.google.com/macros/s/AKfycbwCfLgYAeWZRVlW7MV1O-3gPh4ItBdAu6nZB_2YFthXR5QFcTgvWmQgcH1nyWgNLvn-5g/exec', {
+                            fetch('https://script.google.com/macros/s/AKfycbxM5e3nstg3yPxaXZtz9tOUqcKyK_pjyG77e8ItbUd4IkItuswfCOonACM4bmSGQ7Qf7w/exec', {
                 method: 'POST',
-                body: JSON.stringify(data),
-                headers: { 'Content-Type': 'application/json' }
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: new URLSearchParams(data).toString()
             })
+            .then(res => res.json())
             .then(res => {
-                if(res.ok) {
+                if (res.ok) {
                     alert('Form submitted successfully!');
                     form.reset();
                 } else {
-                    alert('Error submitting the form.');
+                    alert('Error: ' + (res.error || 'submitting the form.'));
                 }
             })
             .catch(() => alert('Connection error while submitting the form.'));

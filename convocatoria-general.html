@@ -523,18 +523,19 @@
             });
             // Agregar columna de tipo de convocatoria
             data['call_type'] = 'General-es';
-            // Enviar datos a Google Sheets vía webhook
-            fetch('https://script.google.com/macros/s/AKfycbwFX6Ok2-eKyUHBAocuasJTVaoUwxuzL5kEyWnr-kRH3yCT9zXeT9XwZzQXb6FaSfYvCg/exec', {
+            // Enviar datos a Google Sheets vía webhook (form-urlencoded)
+            fetch('https://script.google.com/macros/s/AKfycbwCfLgYAeWZRVlW7MV1O-3gPh4ItBdAu6nZB_2YFthXR5QFcTgvWmQgcH1nyWgNLvn-5g/exec', {
                 method: 'POST',
-                body: JSON.stringify(data),
-                headers: { 'Content-Type': 'application/json' }
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: new URLSearchParams(data).toString()
             })
+            .then(res => res.json())
             .then(res => {
-                if(res.ok) {
+                if (res.ok) {
                     alert('¡Formulario enviado correctamente!');
                     form.reset();
                 } else {
-                    alert('Error al enviar el formulario.');
+                    alert('Error: ' + (res.error || 'al enviar el formulario.'));
                 }
             })
             .catch(() => alert('Error de conexión al enviar el formulario.'));
