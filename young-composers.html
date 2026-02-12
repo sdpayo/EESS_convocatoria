@@ -869,7 +869,12 @@
         }
         document.getElementById('submissionForm').addEventListener('submit', function(e) {
             e.preventDefault();
-            // Age restriction validation
+            // Solo permitir el submit si la sección 3 está visible (última sección)
+            if (document.getElementById('seccion3').style.display === 'none') {
+                // Si no está visible, no hacer nada (igual que los otros formularios)
+                return;
+            }
+            // Validación de edad
             const birthDate = new Date(document.getElementById('fecha_nacimiento').value);
             const today = new Date();
             let age = today.getFullYear() - birthDate.getFullYear();
@@ -881,7 +886,7 @@
                 alert('This call is for composers under 35 years old. Please use the Open Call form.');
                 return;
             }
-            // Gather form data
+            // Recolectar datos y enviar
             const form = e.target;
             const data = {};
             Array.from(form.elements).forEach(el => {
@@ -889,11 +894,8 @@
                     data[el.name] = el.value;
                 }
             });
-            // Add call type column
             data['call_type'] = 'sub35-en';
-            // Send data to Google Sheets via webhook
-            fetch('https://script.google.com/macros/s/AKfycbwCfLgYAeWZRVlW7MV1O-3gPh4ItBdAu6nZB_2YFthXR5QFcTgvWmQgcH1nyWgNLvn-5g/exec', {
-                            fetch('https://script.google.com/macros/s/AKfycbxM5e3nstg3yPxaXZtz9tOUqcKyK_pjyG77e8ItbUd4IkItuswfCOonACM4bmSGQ7Qf7w/exec', {
+            fetch('https://script.google.com/macros/s/AKfycbxM5e3nstg3yPxaXZtz9tOUqcKyK_pjyG77e8ItbUd4IkItuswfCOonACM4bmSGQ7Qf7w/exec', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
                 body: new URLSearchParams(data).toString()

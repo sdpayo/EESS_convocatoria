@@ -524,7 +524,7 @@
             // Agregar columna de tipo de convocatoria
             data['call_type'] = 'General-es';
             // Enviar datos a Google Sheets vía webhook (form-urlencoded)
-            fetch('https://script.google.com/macros/s/AKfycbwCfLgYAeWZRVlW7MV1O-3gPh4ItBdAu6nZB_2YFthXR5QFcTgvWmQgcH1nyWgNLvn-5g/exec', {
+            fetch('https://script.google.com/macros/s/AKfycbxM5e3nstg3yPxaXZtz9tOUqcKyK_pjyG77e8ItbUd4IkItuswfCOonACM4bmSGQ7Qf7w/exec', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
                 body: new URLSearchParams(data).toString()
