@@ -351,7 +351,6 @@
                 <div class="form-group">
                     <label for="fecha_nacimiento">Fecha de Nacimiento <span class="required">*</span></label>
                     <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" required>
-                    <div class="form-hint">Debes tener 35 años o menos para esta convocatoria</div>
                 </div>
 
                 <div class="form-group">
@@ -524,25 +523,21 @@
             });
             // Agregar columna de tipo de convocatoria
             data['call_type'] = 'General-es';
-            // Encriptar datos (AES simple con clave fija, para ejemplo)
-            const key = 'espaciossonoros2026';
-            function encrypt(text, key) {
-                // Simple XOR (no seguro, solo ejemplo didáctico)
-                let enc = '';
-                for (let i = 0; i < text.length; i++) {
-                    enc += String.fromCharCode(text.charCodeAt(i) ^ key.charCodeAt(i % key.length));
+            // Enviar datos a Google Sheets vía webhook
+            fetch('https://script.google.com/macros/s/AKfycbwFX6Ok2-eKyUHBAocuasJTVaoUwxuzL5kEyWnr-kRH3yCT9zXeT9XwZzQXb6FaSfYvCg/exec', {
+                method: 'POST',
+                body: JSON.stringify(data),
+                headers: { 'Content-Type': 'application/json' }
+            })
+            .then(res => {
+                if(res.ok) {
+                    alert('¡Formulario enviado correctamente!');
+                    form.reset();
+                } else {
+                    alert('Error al enviar el formulario.');
                 }
-                return btoa(enc);
-            }
-            const csvLine = Object.values(data).map(v => '"'+(v||'')+'"').join(',');
-            const encrypted = encrypt(csvLine, key);
-            // Guardar en archivo CSV (simulado: descarga local)
-            const blob = new Blob([encrypted + '\n'], {type: 'text/plain'});
-            const a = document.createElement('a');
-            a.href = URL.createObjectURL(blob);
-            a.download = 'respuestas_encriptadas.csv';
-            a.click();
-            alert('¡Formulario enviado! El archivo encriptado se descargó. Sube este archivo al repositorio para almacenarlo.');
+            })
+            .catch(() => alert('Error de conexión al enviar el formulario.'));
         });
     </script>
 </body>
